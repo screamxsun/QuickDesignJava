@@ -19,7 +19,11 @@ public class HungrySingleton {
     /**
      * 单例模式不能被外部实例化
      */
-    private HungrySingleton() {}
+    private HungrySingleton() {
+        if (INSTANCE != null) {
+            throw new RuntimeException();
+        }
+    }
 
     /**
      * 提供唯一入口访问唯一的实例对象
